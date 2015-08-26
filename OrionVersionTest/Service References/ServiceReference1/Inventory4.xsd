@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" elementFormDefault="qualified" targetNamespace="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd2" namespace="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" />
+  <xs:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" />
+  <xs:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ExtensionDataContract">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ExtensionDataContract" nillable="true" type="tns:ExtensionDataContract" />
+  <xs:complexType name="CreateModContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ExtensionDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CreatedUserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifiedDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ModifiedUserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateModContract" nillable="true" type="tns:CreateModContract" />
+  <xs:complexType name="ActiveContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActiveContract" nillable="true" type="tns:ActiveContract" />
+  <xs:complexType name="AiringRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AiringRequest" nillable="true" type="tns:AiringRequest" />
+  <xs:complexType name="AiringResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AiringResponse" nillable="true" type="tns:AiringResponse" />
+  <xs:complexType name="BasicOrderedVersionInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Components" nillable="true" type="tns:ArrayOfBasicComponentInformation" />
+      <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsHD" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LengthSec" type="xs:int" />
+      <xs:element minOccurs="0" name="NumBreaks" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItemID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" minOccurs="0" name="OrderItemStatus" type="q1:LongformOrionOrderItemStatus" />
+      <xs:element xmlns:q2="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" minOccurs="0" name="VersionType" type="q2:LongformVersionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicOrderedVersionInformation" nillable="true" type="tns:BasicOrderedVersionInformation" />
+  <xs:complexType name="ArrayOfBasicComponentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicComponentInformation" nillable="true" type="tns:BasicComponentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicComponentInformation" nillable="true" type="tns:ArrayOfBasicComponentInformation" />
+  <xs:complexType name="BasicComponentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentID" type="xs:int" />
+      <xs:element minOccurs="0" name="ComponentTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="StorageDeviceTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicComponentInformation" nillable="true" type="tns:BasicComponentInformation" />
+  <xs:complexType name="BIMComparisonByMaterialIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMComparisonByMaterialIdResponse" nillable="true" type="tns:BIMComparisonByMaterialIdResponse" />
+  <xs:complexType name="VersionTitleInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ActiveContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsKilled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsParentActive" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="tns:TitleInformation" />
+          <xs:element minOccurs="0" name="TitleID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalTime" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VersionTitleInformation" nillable="true" type="tns:VersionTitleInformation" />
+  <xs:complexType name="TitleInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ExtensionDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EpisodeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GrandParentID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="GrandParentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternationalNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReleaseYear" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="TitleID" type="xs:int" />
+          <xs:element minOccurs="0" name="TitleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TitleTypeCD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TitleTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TitleInformation" nillable="true" type="tns:TitleInformation" />
+  <xs:complexType name="ArrayOfVersionTitleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VersionTitleInformation" nillable="true" type="tns:VersionTitleInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVersionTitleInformation" nillable="true" type="tns:ArrayOfVersionTitleInformation" />
+  <xs:complexType name="RequestQueueRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestQueueRequest" nillable="true" type="tns:RequestQueueRequest" />
+  <xs:complexType name="HotStartNetworkSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NetworkID" type="xs:int" />
+      <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HotStartNetworkSetting" nillable="true" type="tns:HotStartNetworkSetting" />
+  <xs:complexType name="RequestQueueResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestQueueResponse" nillable="true" type="tns:RequestQueueResponse" />
+  <xs:complexType name="ValidateCQCProbelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LocationBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TapeBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserNTLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateCQCProbelRequest" nillable="true" type="tns:ValidateCQCProbelRequest" />
+  <xs:complexType name="ValidateCQCProbelResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateCQCProbelResult" nillable="true" type="tns:ValidateCQCProbelResult" />
+  <xs:complexType name="VersionCountByTitleIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveVersionCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CreditCount" type="xs:int" />
+      <xs:element minOccurs="0" name="InactiveVersionCount" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TitleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionCountByTitleIdResponse" nillable="true" type="tns:VersionCountByTitleIdResponse" />
+  <xs:complexType name="BasicVersionResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderedVersionResults" nillable="true" type="tns:ArrayOfBasicOrderedVersionInformation" />
+      <xs:element minOccurs="0" name="VersionResults" nillable="true" type="tns:ArrayOfBasicVersionInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVersionResults" nillable="true" type="tns:BasicVersionResults" />
+  <xs:complexType name="ArrayOfBasicOrderedVersionInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicOrderedVersionInformation" nillable="true" type="tns:BasicOrderedVersionInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicOrderedVersionInformation" nillable="true" type="tns:ArrayOfBasicOrderedVersionInformation" />
+  <xs:complexType name="ArrayOfBasicVersionInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicVersionInformation" nillable="true" type="tns:BasicVersionInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicVersionInformation" nillable="true" type="tns:ArrayOfBasicVersionInformation" />
+  <xs:complexType name="BasicVersionInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Components" nillable="true" type="tns:ArrayOfBasicComponentInformation" />
+      <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsHD" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LengthSec" type="xs:int" />
+      <xs:element minOccurs="0" name="NetworkCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfBreaks" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItemID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" minOccurs="0" name="OrderItemStatus" nillable="true" type="q3:LongformOrionOrderItemStatus" />
+      <xs:element minOccurs="0" name="Segments" nillable="true" type="tns:ArrayOfBasicSegmentInformation" />
+      <xs:element minOccurs="0" name="TitleID" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" minOccurs="0" name="VersionType" type="q4:LongformVersionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVersionInformation" nillable="true" type="tns:BasicVersionInformation" />
+  <xs:complexType name="ArrayOfBasicSegmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicSegmentInformation" nillable="true" type="tns:BasicSegmentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicSegmentInformation" nillable="true" type="tns:ArrayOfBasicSegmentInformation" />
+  <xs:complexType name="BasicSegmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegmentLengthSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="SegmentNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicSegmentInformation" nillable="true" type="tns:BasicSegmentInformation" />
+  <xs:complexType name="ArrayOfDetailComponentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailComponentInformation" nillable="true" type="tns:DetailComponentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailComponentInformation" nillable="true" type="tns:ArrayOfDetailComponentInformation" />
+  <xs:complexType name="DetailComponentInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ActiveContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentCreatedByID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ComponentCreationByName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentCreationDateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ComponentID" type="xs:int" />
+          <xs:element minOccurs="0" name="ComponentTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCCFileMatched" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsParentActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfDetailNoteInformation" />
+          <xs:element minOccurs="0" name="OrderItemID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentComponentID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StorageDeviceTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrackName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VendorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailComponentInformation" nillable="true" type="tns:DetailComponentInformation" />
+  <xs:complexType name="ArrayOfDetailNoteInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailNoteInformation" nillable="true" type="tns:DetailNoteInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailNoteInformation" nillable="true" type="tns:ArrayOfDetailNoteInformation" />
+  <xs:complexType name="DetailNoteInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ActiveContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssociatedID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoteID" type="xs:int" />
+          <xs:element minOccurs="0" name="NoteSubTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoteTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailNoteInformation" nillable="true" type="tns:DetailNoteInformation" />
+  <xs:complexType name="ErrorShelfStatusInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EpisodeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InternationalEpisodeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReelID" type="xs:int" />
+      <xs:element minOccurs="0" name="ScannedByUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScannedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorShelfStatusInfo" nillable="true" type="tns:ErrorShelfStatusInfo" />
+  <xs:complexType name="FlexiCartStatusInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="EpisodeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InternationalEpisodeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDMIIngested" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProbelIngestedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReelID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReelNum" type="xs:int" />
+      <xs:element minOccurs="0" name="ScannedToFlexiCartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalRunTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlexiCartStatusInfo" nillable="true" type="tns:FlexiCartStatusInfo" />
+  <xs:complexType name="DetailQCInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OverturnedFailReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OverturnedPassReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OverturnedRejectionDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OverturnedRejectionDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OverturnedRejectionStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OverturnedRejectionUserID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OverturnedRejectionUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QCDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="QCEditor" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="QCEditorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QCEquipmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QCID" type="xs:int" />
+          <xs:element minOccurs="0" name="QCTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailQCInformation" nillable="true" type="tns:DetailQCInformation" />
+  <xs:complexType name="DetailQCHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DetailQCInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QCHistoryID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailQCHistory" nillable="true" type="tns:DetailQCHistory" />
+  <xs:complexType name="DetailQCRejectionReportHeaderInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AirDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistributorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsFullFrame" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfDetailQCRejectionReportItemInformation" />
+          <xs:element minOccurs="0" name="QCID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="QCRejectionReportHeaderID" type="xs:int" />
+          <xs:element minOccurs="0" name="SubtitlingTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapehouseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WONumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailQCRejectionReportHeaderInformation" nillable="true" type="tns:DetailQCRejectionReportHeaderInformation" />
+  <xs:complexType name="ArrayOfDetailQCRejectionReportItemInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailQCRejectionReportItemInformation" nillable="true" type="tns:DetailQCRejectionReportItemInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailQCRejectionReportItemInformation" nillable="true" type="tns:ArrayOfDetailQCRejectionReportItemInformation" />
+  <xs:complexType name="DetailQCRejectionReportItemInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QCRejectionReportHeaderID" type="xs:int" />
+          <xs:element minOccurs="0" name="QCRejectionReportItemID" type="xs:int" />
+          <xs:element minOccurs="0" name="ReelID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RejectionReasonTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Severity" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeCodeIn" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeCodeOut" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailQCRejectionReportItemInformation" nillable="true" type="tns:DetailQCRejectionReportItemInformation" />
+  <xs:complexType name="DetailReelInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrentLocationBarcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrentLocationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomeLocationBarcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomeLocationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsKilled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNotFound" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfDetailNoteInformation" />
+          <xs:element minOccurs="0" name="RecordDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RecycleCount" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="RecycleDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RecycleTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReelID" type="xs:int" />
+          <xs:element minOccurs="0" name="ReelTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorageDeviceTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VTRName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailReelInformation" nillable="true" type="tns:DetailReelInformation" />
+  <xs:complexType name="DetailRejectedItemInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AirDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AspectRatioTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CCLanguageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvIssueEndStateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCC" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCCFileEnc" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDamagedTape" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsFullFrame" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLetterbox" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMultiTrack" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPanScan" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsQCRejection" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSplitTrack" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSubtitled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTheatrical" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PONumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QCTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RejectedByID" type="xs:int" />
+          <xs:element minOccurs="0" name="RejectedByName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RejectedDatetime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RejectedItemID" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportedByDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReportedByName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubtitleLanguageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TitleID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VendorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VideoTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WONumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailRejectedItemInformation" nillable="true" type="tns:DetailRejectedItemInformation" />
+  <xs:complexType name="DetailSegmentInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegmentCreditLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SegmentCreditTimeCodeIn" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SegmentCreditTimeCodeOut" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SegmentCreditTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="SegmentNum" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeCodeIn" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeCodeOut" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionReelID" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailSegmentInformation" nillable="true" type="tns:DetailSegmentInformation" />
+  <xs:complexType name="DetailVersionFranchiseInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FranchiseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionFranchiseID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailVersionFranchiseInformation" nillable="true" type="tns:DetailVersionFranchiseInformation" />
+  <xs:complexType name="DetailVersionInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ActiveContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowableLexiconPercent" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="AspectRatioName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AspectRatioTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedQCDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedQCEditorID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AssignedQCFullname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Components" nillable="true" type="tns:ArrayOfDetailComponentInformation" />
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreditLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreditsEndTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreditsLexiconPercent" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="CreditsOverMusicEndTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreditsOverMusicStartTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreditsOverVideoEndTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreditsOverVideoStartTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreditsStartTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DubSegmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EDLDisk" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EditLabelID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EditLabelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EditVersionTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndCreditLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FirstVideo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Franchises" nillable="true" type="tns:ArrayOfDetailVersionFranchiseInformation" />
+          <xs:element minOccurs="0" name="HasNoCredits" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasWindowTimeCode" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InactivationReasonName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InteractiveName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCloneMade" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCreditLexicon" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDoNotEdit" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDoNotEditForContent" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDoNotEditForTime" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDoNotLexicon" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDoNotUseSqueezeCredits" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsEditedByDistributor" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsEditedForContent" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsEditedForTime" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsFormattedForTV" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsHD" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsHighPriority" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsIngested" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsKilled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLexicon" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMultiRatio" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPanscan" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsParentActive" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPartialSubtitled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReconciled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRemastered" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRestored" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRestricted" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRestrictedUse" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRevoiced" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTVEdit" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastVideo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LetterboxRatioName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LexiconPercent" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotAirableNetworks" nillable="true" type="tns:ArrayOfDetailVersionNotAirableByNetworkInformation" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfDetailNoteInformation" />
+          <xs:element minOccurs="0" name="NumBreaks" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OrderItemID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OrderItemType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentVersionID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PendingActionName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QCRejections" nillable="true" type="tns:ArrayOfDetailQCRejectionReportHeaderInformation" />
+          <xs:element minOccurs="0" name="QCs" nillable="true" type="tns:ArrayOfDetailQCInformation" />
+          <xs:element minOccurs="0" name="RejectedItems" nillable="true" type="tns:ArrayOfDetailRejectedItemInformation" />
+          <xs:element minOccurs="0" name="RootContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RootVersionID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SPFile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScanTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Segments" nillable="true" type="tns:ArrayOfDetailSegmentInformation" />
+          <xs:element minOccurs="0" name="StartCreditLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StorageDeviceTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="tns:TitleInformation" />
+          <xs:element minOccurs="0" name="TitleID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalTime" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Tracks" nillable="true" type="tns:ArrayOfDetailVersionTrackInformation" />
+          <xs:element minOccurs="0" name="VersionCreatedByID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionCreationByName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionCreationDatetime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionReels" nillable="true" type="tns:ArrayOfDetailVersionReelInformation" />
+          <xs:element minOccurs="0" name="VersionTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VideoTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailVersionInformation" nillable="true" type="tns:DetailVersionInformation" />
+  <xs:complexType name="ArrayOfDetailVersionFranchiseInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailVersionFranchiseInformation" nillable="true" type="tns:DetailVersionFranchiseInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailVersionFranchiseInformation" nillable="true" type="tns:ArrayOfDetailVersionFranchiseInformation" />
+  <xs:complexType name="ArrayOfDetailVersionNotAirableByNetworkInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailVersionNotAirableByNetworkInformation" nillable="true" type="tns:DetailVersionNotAirableByNetworkInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailVersionNotAirableByNetworkInformation" nillable="true" type="tns:ArrayOfDetailVersionNotAirableByNetworkInformation" />
+  <xs:complexType name="DetailVersionNotAirableByNetworkInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionsNotAirableByNetworkID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailVersionNotAirableByNetworkInformation" nillable="true" type="tns:DetailVersionNotAirableByNetworkInformation" />
+  <xs:complexType name="ArrayOfDetailQCRejectionReportHeaderInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailQCRejectionReportHeaderInformation" nillable="true" type="tns:DetailQCRejectionReportHeaderInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailQCRejectionReportHeaderInformation" nillable="true" type="tns:ArrayOfDetailQCRejectionReportHeaderInformation" />
+  <xs:complexType name="ArrayOfDetailQCInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailQCInformation" nillable="true" type="tns:DetailQCInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailQCInformation" nillable="true" type="tns:ArrayOfDetailQCInformation" />
+  <xs:complexType name="ArrayOfDetailRejectedItemInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailRejectedItemInformation" nillable="true" type="tns:DetailRejectedItemInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailRejectedItemInformation" nillable="true" type="tns:ArrayOfDetailRejectedItemInformation" />
+  <xs:complexType name="ArrayOfDetailSegmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailSegmentInformation" nillable="true" type="tns:DetailSegmentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailSegmentInformation" nillable="true" type="tns:ArrayOfDetailSegmentInformation" />
+  <xs:complexType name="ArrayOfDetailVersionTrackInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailVersionTrackInformation" nillable="true" type="tns:DetailVersionTrackInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailVersionTrackInformation" nillable="true" type="tns:ArrayOfDetailVersionTrackInformation" />
+  <xs:complexType name="DetailVersionTrackInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AudioTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrackName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrackNum" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionTrackID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailVersionTrackInformation" nillable="true" type="tns:DetailVersionTrackInformation" />
+  <xs:complexType name="ArrayOfDetailVersionReelInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailVersionReelInformation" nillable="true" type="tns:DetailVersionReelInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailVersionReelInformation" nillable="true" type="tns:ArrayOfDetailVersionReelInformation" />
+  <xs:complexType name="DetailVersionReelInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CreateModContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Reel" nillable="true" type="tns:DetailReelInformation" />
+          <xs:element minOccurs="0" name="ReelID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReelNum" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Segments" nillable="true" type="tns:ArrayOfDetailSegmentInformation" />
+          <xs:element minOccurs="0" name="StartTimeCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TapehouseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VersionReelID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailVersionReelInformation" nillable="true" type="tns:DetailVersionReelInformation" />
+  <xs:complexType name="ShelfInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDMIIngest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSendProbelFile" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShelfInformation" nillable="true" type="tns:ShelfInformation" />
+  <xs:complexType name="TitleOverview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Title" nillable="true" type="tns:TitleInformation" />
+      <xs:element minOccurs="0" name="TitleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Versions" nillable="true" type="tns:ArrayOfVersionOverview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TitleOverview" nillable="true" type="tns:TitleOverview" />
+  <xs:complexType name="ArrayOfVersionOverview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VersionOverview" nillable="true" type="tns:VersionOverview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVersionOverview" nillable="true" type="tns:ArrayOfVersionOverview" />
+  <xs:complexType name="VersionOverview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DubSegment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCompReel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHD" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MediaType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NeedFile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderItemID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItemType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OverturnedRejectionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentVersionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PendingAction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionOverview" nillable="true" type="tns:VersionOverview" />
+  <xs:complexType name="ArrayOfDetailVersionInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailVersionInformation" nillable="true" type="tns:DetailVersionInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailVersionInformation" nillable="true" type="tns:ArrayOfDetailVersionInformation" />
+  <xs:complexType name="VersionSummaryCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IncludeInactive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TitleID" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionSummaryCriteria" nillable="true" type="tns:VersionSummaryCriteria" />
+  <xs:complexType name="LongformBasicSegmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegmentLength" type="xs:int" />
+      <xs:element minOccurs="0" name="SegmentNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LongformBasicSegmentInformation" nillable="true" type="tns:LongformBasicSegmentInformation" />
+  <xs:complexType name="NetworkPullSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DoBimCheck" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HomeLocationPrefixCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetworkID" type="xs:int" />
+      <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NetworkPullSetting" nillable="true" type="tns:NetworkPullSetting" />
+  <xs:complexType name="OrderSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderSummary" nillable="true" type="tns:OrderSummary" />
+  <xs:complexType name="ProbelXmlDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XmlData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProbelXmlDetail" nillable="true" type="tns:ProbelXmlDetail" />
+  <xs:complexType name="VersionSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AspectRatioName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AspectRatioTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Component" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHD" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Letterboxed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MediaType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetworkName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumBreaks" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRunTimeSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VideoType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionSummary" nillable="true" type="tns:VersionSummary" />
+  <xs:complexType name="VersionSummaryByTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderSummary" nillable="true" type="tns:ArrayOfOrderSummary" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="tns:TitleInformation" />
+      <xs:element minOccurs="0" name="TitleID" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionSummary" nillable="true" type="tns:ArrayOfVersionSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionSummaryByTitle" nillable="true" type="tns:VersionSummaryByTitle" />
+  <xs:complexType name="ArrayOfOrderSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderSummary" nillable="true" type="tns:OrderSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderSummary" nillable="true" type="tns:ArrayOfOrderSummary" />
+  <xs:complexType name="ArrayOfVersionSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VersionSummary" nillable="true" type="tns:VersionSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVersionSummary" nillable="true" type="tns:ArrayOfVersionSummary" />
+  <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" name="RequestByTitle" nillable="true" type="q5:BasicVersionByTitleInfo" />
+  <xs:element name="ResultsByTitle" nillable="true" type="tns:BasicVersionResults" />
+  <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" name="RequestForCID" nillable="true" type="q6:BasicVersionByCID" />
+  <xs:element name="ResultByCID" nillable="true" type="tns:ArrayOfBasicVersionInformation" />
+  <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" name="RequestForVersionID" nillable="true" type="q7:BasicVersionByVersionID" />
+  <xs:element name="ResultByVersionID" nillable="true" type="tns:ArrayOfBasicVersionInformation" />
+  <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" name="RequestByOrderItemID" nillable="true" type="q8:BasicVersionByOrderItemID" />
+  <xs:element name="ResultByOrderItemID" nillable="true" type="tns:ArrayOfBasicVersionInformation" />
+  <xs:element xmlns:q9="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="ShuffleRequests" nillable="true" type="q9:ShuffleRequests" />
+  <xs:element xmlns:q10="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="ShuffleResponses" nillable="true" type="q10:ShuffleResponses" />
+  <xs:element name="LocationBarcode" nillable="true" type="xs:string" />
+  <xs:element name="ShelfInfo" nillable="true" type="tns:ShelfInformation" />
+  <xs:element name="TapeBarcode" nillable="true" type="xs:string" />
+  <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="VersionIDs" nillable="true" type="q11:ArrayOfint" />
+  <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ContentIDs" nillable="true" type="q12:ArrayOfstring" />
+  <xs:element xmlns:q13="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionDetailRequest" nillable="true" type="q13:VersionDetailRequest" />
+  <xs:element xmlns:q14="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionDetailResponse" nillable="true" type="q14:VersionDetailResponse" />
+  <xs:element xmlns:q15="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionTitleRequest" nillable="true" type="q15:VersionTitleRequest" />
+  <xs:element xmlns:q16="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionTitleResponse" nillable="true" type="q16:VersionTitleResponse" />
+  <xs:element xmlns:q17="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="ComponentDetailRequest" nillable="true" type="q17:ComponentDetailRequest" />
+  <xs:element xmlns:q18="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="ComponentDetailResponse" nillable="true" type="q18:ComponentDetailResponse" />
+  <xs:element xmlns:q19="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionReelDetailRequest" nillable="true" type="q19:VersionReelDetailRequest" />
+  <xs:element xmlns:q20="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionReelDetailResponse" nillable="true" type="q20:VersionReelDetailResponse" />
+  <xs:element xmlns:q21="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="QCRejectionDetailRequest" nillable="true" type="q21:QCRejectionDetailRequest" />
+  <xs:element xmlns:q22="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="QCRejectionDetailResponse" nillable="true" type="q22:QCRejectionDetailResponse" />
+  <xs:element xmlns:q23="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="VersionCountByTitleIdRequestMessage" nillable="true" type="q23:VersionCountByTitleIdRequest" />
+  <xs:complexType name="ArrayOfVersionCountByTitleIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VersionCountByTitleIdResponse" nillable="true" type="tns:VersionCountByTitleIdResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVersionCountByTitleIdResponse" nillable="true" type="tns:ArrayOfVersionCountByTitleIdResponse" />
+  <xs:element name="VersionCountByTitleIdResponseMessage" nillable="true" type="tns:ArrayOfVersionCountByTitleIdResponse" />
+  <xs:element xmlns:q24="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" name="BIMComparisonByMaterialIdRequestMessage" nillable="true" type="q24:BIMComparisonByMaterialIdRequest" />
+  <xs:complexType name="ArrayOfBIMComparisonByMaterialIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMComparisonByMaterialIdResponse" nillable="true" type="tns:BIMComparisonByMaterialIdResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMComparisonByMaterialIdResponse" nillable="true" type="tns:ArrayOfBIMComparisonByMaterialIdResponse" />
+  <xs:element name="BIMComparisonByMaterialIdResponseMessage" nillable="true" type="tns:ArrayOfBIMComparisonByMaterialIdResponse" />
+  <xs:complexType name="ArrayOfHotStartNetworkSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HotStartNetworkSetting" nillable="true" type="tns:HotStartNetworkSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHotStartNetworkSetting" nillable="true" type="tns:ArrayOfHotStartNetworkSetting" />
+  <xs:element name="HotStartNetworkAll" nillable="true" type="tns:ArrayOfHotStartNetworkSetting" />
+</xs:schema>

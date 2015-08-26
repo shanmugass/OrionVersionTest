@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="BasicVersionByTitleInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TitleID" nillable="true" type="q1:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVersionByTitleInfo" nillable="true" type="tns:BasicVersionByTitleInfo" />
+  <xs:complexType name="BasicVersionByCID">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ContentID" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVersionByCID" nillable="true" type="tns:BasicVersionByCID" />
+  <xs:complexType name="BasicVersionByVersionID">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VersionID" nillable="true" type="q3:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVersionByVersionID" nillable="true" type="tns:BasicVersionByVersionID" />
+  <xs:complexType name="BasicVersionByOrderItemID">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderItemID" nillable="true" type="q4:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVersionByOrderItemID" nillable="true" type="tns:BasicVersionByOrderItemID" />
+  <xs:complexType name="TapeMoveInfomation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NewShelfLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TapeBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TapeMoveInfomation" nillable="true" type="tns:TapeMoveInfomation" />
+</xs:schema>

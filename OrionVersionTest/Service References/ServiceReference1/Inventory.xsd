@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.turner.com/ea/Orion/Longform/message/5/0" elementFormDefault="qualified" targetNamespace="http://schemas.turner.com/ea/Orion/Longform/message/5/0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd1" namespace="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" />
+  <xs:element name="GetBasicVersionInformationByTitleRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q1:RequestByTitle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByTitleResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q2:ResultsByTitle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByCIDRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q3:RequestForCID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByCIDResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q4:ResultByCID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByVersionIDRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q5:RequestForVersionID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByVersionIDResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q6:ResultByVersionID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByOrderItemIDRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q7:RequestByOrderItemID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicVersionInformationByOrderItemIDResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q8:ResultByOrderItemID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShuffleRequestsMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q9:ShuffleRequests" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShuffleResponsesMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q10:ShuffleResponses" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionSummaryRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q11:VersionSummaryCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionSummaryTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q12:VersionSummaryByTitle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TitleOverviewRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q13:VersionSummaryCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TitleOverviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q14:TitleOverview" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIsSendProbelFileForLocationTypeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q15:LocationBarcode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIsSendProbelFileForLocationTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q16:ShelfInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionIDByBarcodeRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q17:TapeBarcode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionIDByBarcodeResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q18:VersionIDs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIDByBarcodeRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q19:TapeBarcode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIDByBarcodeResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q20:ContentIDs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionDetailRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q21:VersionDetailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionDetailResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q22:VersionDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionTitleRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q23:VersionTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionTitleResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q24:VersionTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComponentDetailRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q25:ComponentDetailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComponentDetailResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q26:ComponentDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionReelDetailRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q27:VersionReelDetailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionReelDetailResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q28:VersionReelDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QCRejectionDetailRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q29:QCRejectionDetailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QCRejectionDetailResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q30:QCRejectionDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionCountByTitleIdRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q31:VersionCountByTitleIdRequestMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionCountByTitleIdResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q32:VersionCountByTitleIdResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BIMComparisonByMaterialIdRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q33:BIMComparisonByMaterialIdRequestMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BIMComparisonByMaterialIdResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q34:BIMComparisonByMaterialIdResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotStartNetworkMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" minOccurs="0" ref="q35:HotStartNetworkAll" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

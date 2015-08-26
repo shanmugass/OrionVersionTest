@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InventoryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" location="http://orion/Webservice/Longform/Inventory.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IInventory" type="i0:IInventory">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBasicVersionInformationByTitle">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByTitle" style="document" />
+      <wsdl:input name="GetBasicVersionInformationByTitleRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBasicVersionInformationByTitleResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicVersionInformationByCID">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByCID" style="document" />
+      <wsdl:input name="GetBasicVersionInformationByCIDRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBasicVersionInformationByCIDResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicVersionInformationByVersionID">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByVersionID" style="document" />
+      <wsdl:input name="GetBasicVersionInformationByVersionIDRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBasicVersionInformationByVersionIDResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicVersionInformationByOrderItemID">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByOrderItemID" style="document" />
+      <wsdl:input name="GetBasicVersionInformationByOrderItemIDRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBasicVersionInformationByOrderItemIDResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProbelAudioShuffleIDs">
+      <soap:operation soapAction="GetProbelAudioShuffleIds" style="document" />
+      <wsdl:input name="ShuffleRequestsMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ShuffleResponsesMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="LongformFaultDetailFault">
+        <soap:fault use="literal" name="LongformFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionSummaryByTitleID">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionSummaryByTitleID" style="document" />
+      <wsdl:input name="VersionSummaryRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VersionSummaryTitleResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleOverview">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetTitleOverview" style="document" />
+      <wsdl:input name="TitleOverviewRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TitleOverviewResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsSendProbelFileForLocationType">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetIsSendProbelFileForLocationType" style="document" />
+      <wsdl:input name="GetIsSendProbelFileForLocationTypeRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetIsSendProbelFileForLocationTypeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionIDByBarcode">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionIDByBarcode" style="document" />
+      <wsdl:input name="GetVersionIDByBarcodeRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetVersionIDByBarcodeResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCIDByBarcode">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetCIDByBarcode" style="document" />
+      <wsdl:input name="GetCIDByBarcodeRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCIDByBarcodeResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailVersionInformation">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionInformation" style="document" />
+      <wsdl:input name="VersionDetailRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VersionDetailResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionTitleInformation">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionTitleInformation" style="document" />
+      <wsdl:input name="VersionTitleRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VersionTitleResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailComponentInformation">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailComponentInformation" style="document" />
+      <wsdl:input name="ComponentDetailRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ComponentDetailResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailVersionReelInformation">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionReelInformation" style="document" />
+      <wsdl:input name="VersionReelDetailRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VersionReelDetailResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailQCRejectionInformation">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailQCRejectionInformation" style="document" />
+      <wsdl:input name="QCRejectionDetailRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="QCRejectionDetailResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionCountByTitleId">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionCountByTitleId" style="document" />
+      <wsdl:input name="VersionCountByTitleIdRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VersionCountByTitleIdResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBIMComparisonDataByMaterialId">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBIMComparisonDataByMaterialId" style="document" />
+      <wsdl:input name="BIMComparisonByMaterialIdRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BIMComparisonByMaterialIdResponseMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotStartNetworks">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetHotStartNetworks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetHotStartNetworkMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OrionFaultFault">
+        <soap:fault use="literal" name="OrionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPing">
+      <soap:operation soapAction="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/VersionPing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InventoryService">
+    <wsdl:port name="BasicHttpBinding_IInventory" binding="tns:BasicHttpBinding_IInventory">
+      <soap:address location="http://orion/Webservice/Longform/Inventory.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

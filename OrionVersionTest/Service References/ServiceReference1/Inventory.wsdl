@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/Imports">
+      <xsd:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd5" namespace="http://schemas.turner.com/ea/Orion/Longform/message/5/0" />
+      <xsd:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd2" namespace="http://schemas.turner.com/ea/Orion/Longform/contract/5/0" />
+      <xsd:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd1" namespace="http://schemas.turner.com/ea/Orion/Longform/schema/5/0" />
+      <xsd:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BSD.Orion.Service.LongformContracts.DataContracts" />
+      <xsd:import schemaLocation="http://orion/Webservice/Longform/Inventory.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBasicVersionInformationByTitleRequest">
+    <wsdl:part xmlns:q1="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q1:GetBasicVersionInformationByTitleRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByTitleResponseMessage">
+    <wsdl:part xmlns:q2="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q2:GetBasicVersionInformationByTitleResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetBasicVersionInformationByTitle_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByCIDRequest">
+    <wsdl:part xmlns:q3="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q3:GetBasicVersionInformationByCIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByCIDResponseMessage">
+    <wsdl:part xmlns:q4="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q4:GetBasicVersionInformationByCIDResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetBasicVersionInformationByCID_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByVersionIDRequest">
+    <wsdl:part xmlns:q5="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q5:GetBasicVersionInformationByVersionIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByVersionIDResponseMessage">
+    <wsdl:part xmlns:q6="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q6:GetBasicVersionInformationByVersionIDResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetBasicVersionInformationByVersionID_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByOrderItemIDRequest">
+    <wsdl:part xmlns:q7="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q7:GetBasicVersionInformationByOrderItemIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetBasicVersionInformationByOrderItemIDResponseMessage">
+    <wsdl:part xmlns:q8="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q8:GetBasicVersionInformationByOrderItemIDResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetBasicVersionInformationByOrderItemID_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="ShuffleRequestsMessage">
+    <wsdl:part xmlns:q9="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q9:ShuffleRequestsMessage" />
+  </wsdl:message>
+  <wsdl:message name="ShuffleResponsesMessage">
+    <wsdl:part xmlns:q10="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q10:ShuffleResponsesMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetProbelAudioShuffleIDs_LongformFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:LongformFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="VersionSummaryRequest">
+    <wsdl:part xmlns:q11="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q11:VersionSummaryRequest" />
+  </wsdl:message>
+  <wsdl:message name="VersionSummaryTitleResponse">
+    <wsdl:part xmlns:q12="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q12:VersionSummaryTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetVersionSummaryByTitleID_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="TitleOverviewRequest">
+    <wsdl:part xmlns:q13="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q13:TitleOverviewRequest" />
+  </wsdl:message>
+  <wsdl:message name="TitleOverviewResponse">
+    <wsdl:part xmlns:q14="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q14:TitleOverviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetTitleOverview_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="GetIsSendProbelFileForLocationTypeRequest">
+    <wsdl:part xmlns:q15="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q15:GetIsSendProbelFileForLocationTypeRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetIsSendProbelFileForLocationTypeResponse">
+    <wsdl:part xmlns:q16="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q16:GetIsSendProbelFileForLocationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetIsSendProbelFileForLocationType_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionIDByBarcodeRequestMessage">
+    <wsdl:part xmlns:q17="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q17:GetVersionIDByBarcodeRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionIDByBarcodeResponseMessage">
+    <wsdl:part xmlns:q18="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q18:GetVersionIDByBarcodeResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetVersionIDByBarcode_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="GetCIDByBarcodeRequestMessage">
+    <wsdl:part xmlns:q19="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q19:GetCIDByBarcodeRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetCIDByBarcodeResponseMessage">
+    <wsdl:part xmlns:q20="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q20:GetCIDByBarcodeResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetCIDByBarcode_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="VersionDetailRequestMessage">
+    <wsdl:part xmlns:q21="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q21:VersionDetailRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="VersionDetailResponseMessage">
+    <wsdl:part xmlns:q22="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q22:VersionDetailResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetDetailVersionInformation_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="VersionTitleRequestMessage">
+    <wsdl:part xmlns:q23="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q23:VersionTitleRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="VersionTitleResponseMessage">
+    <wsdl:part xmlns:q24="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q24:VersionTitleResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetVersionTitleInformation_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="ComponentDetailRequestMessage">
+    <wsdl:part xmlns:q25="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q25:ComponentDetailRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="ComponentDetailResponseMessage">
+    <wsdl:part xmlns:q26="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q26:ComponentDetailResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetDetailComponentInformation_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="VersionReelDetailRequestMessage">
+    <wsdl:part xmlns:q27="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q27:VersionReelDetailRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="VersionReelDetailResponseMessage">
+    <wsdl:part xmlns:q28="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q28:VersionReelDetailResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetDetailVersionReelInformation_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="QCRejectionDetailRequestMessage">
+    <wsdl:part xmlns:q29="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q29:QCRejectionDetailRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="QCRejectionDetailResponseMessage">
+    <wsdl:part xmlns:q30="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q30:QCRejectionDetailResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetDetailQCRejectionInformation_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="VersionCountByTitleIdRequestMessage">
+    <wsdl:part xmlns:q31="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q31:VersionCountByTitleIdRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="VersionCountByTitleIdResponseMessage">
+    <wsdl:part xmlns:q32="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q32:VersionCountByTitleIdResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetVersionCountByTitleId_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="BIMComparisonByMaterialIdRequestMessage">
+    <wsdl:part xmlns:q33="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q33:BIMComparisonByMaterialIdRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="BIMComparisonByMaterialIdResponseMessage">
+    <wsdl:part xmlns:q34="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q34:BIMComparisonByMaterialIdResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetBIMComparisonDataByMaterialId_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetHotStartNetworks_InputMessage" />
+  <wsdl:message name="GetHotStartNetworkMessage">
+    <wsdl:part xmlns:q35="http://schemas.turner.com/ea/Orion/Longform/message/5/0" name="parameters" element="q35:GetHotStartNetworkMessage" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_GetHotStartNetworks_OrionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OrionFault" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_VersionPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPing" />
+  </wsdl:message>
+  <wsdl:message name="IInventory_VersionPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInventory">
+    <wsdl:operation name="GetBasicVersionInformationByTitle">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByTitle" name="GetBasicVersionInformationByTitleRequest" message="tns:GetBasicVersionInformationByTitleRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByTitleResponse" name="GetBasicVersionInformationByTitleResponseMessage" message="tns:GetBasicVersionInformationByTitleResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByTitleOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetBasicVersionInformationByTitle_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicVersionInformationByCID">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByCID" name="GetBasicVersionInformationByCIDRequest" message="tns:GetBasicVersionInformationByCIDRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByCIDResponse" name="GetBasicVersionInformationByCIDResponseMessage" message="tns:GetBasicVersionInformationByCIDResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByCIDOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetBasicVersionInformationByCID_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicVersionInformationByVersionID">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByVersionID" name="GetBasicVersionInformationByVersionIDRequest" message="tns:GetBasicVersionInformationByVersionIDRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByVersionIDResponse" name="GetBasicVersionInformationByVersionIDResponseMessage" message="tns:GetBasicVersionInformationByVersionIDResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByVersionIDOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetBasicVersionInformationByVersionID_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicVersionInformationByOrderItemID">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByOrderItemID" name="GetBasicVersionInformationByOrderItemIDRequest" message="tns:GetBasicVersionInformationByOrderItemIDRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByOrderItemIDResponse" name="GetBasicVersionInformationByOrderItemIDResponseMessage" message="tns:GetBasicVersionInformationByOrderItemIDResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBasicVersionInformationByOrderItemIDOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetBasicVersionInformationByOrderItemID_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProbelAudioShuffleIDs">
+      <wsdl:input wsaw:Action="GetProbelAudioShuffleIds" name="ShuffleRequestsMessage" message="tns:ShuffleRequestsMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetProbelAudioShuffleIDsResponse" name="ShuffleResponsesMessage" message="tns:ShuffleResponsesMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetProbelAudioShuffleIDsLongformFaultDetailFault" name="LongformFaultDetailFault" message="tns:IInventory_GetProbelAudioShuffleIDs_LongformFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionSummaryByTitleID">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionSummaryByTitleID" name="VersionSummaryRequest" message="tns:VersionSummaryRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionSummaryByTitleIDResponse" name="VersionSummaryTitleResponse" message="tns:VersionSummaryTitleResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionSummaryByTitleIDOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetVersionSummaryByTitleID_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTitleOverview">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetTitleOverview" name="TitleOverviewRequest" message="tns:TitleOverviewRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetTitleOverviewResponse" name="TitleOverviewResponse" message="tns:TitleOverviewResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetTitleOverviewOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetTitleOverview_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsSendProbelFileForLocationType">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetIsSendProbelFileForLocationType" name="GetIsSendProbelFileForLocationTypeRequest" message="tns:GetIsSendProbelFileForLocationTypeRequest" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetIsSendProbelFileForLocationTypeResponse" name="GetIsSendProbelFileForLocationTypeResponse" message="tns:GetIsSendProbelFileForLocationTypeResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetIsSendProbelFileForLocationTypeOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetIsSendProbelFileForLocationType_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionIDByBarcode">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionIDByBarcode" name="GetVersionIDByBarcodeRequestMessage" message="tns:GetVersionIDByBarcodeRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionIDByBarcodeResponse" name="GetVersionIDByBarcodeResponseMessage" message="tns:GetVersionIDByBarcodeResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionIDByBarcodeOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetVersionIDByBarcode_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIDByBarcode">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetCIDByBarcode" name="GetCIDByBarcodeRequestMessage" message="tns:GetCIDByBarcodeRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetCIDByBarcodeResponse" name="GetCIDByBarcodeResponseMessage" message="tns:GetCIDByBarcodeResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetCIDByBarcodeOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetCIDByBarcode_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailVersionInformation">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionInformation" name="VersionDetailRequestMessage" message="tns:VersionDetailRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionInformationResponse" name="VersionDetailResponseMessage" message="tns:VersionDetailResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionInformationOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetDetailVersionInformation_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionTitleInformation">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionTitleInformation" name="VersionTitleRequestMessage" message="tns:VersionTitleRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionTitleInformationResponse" name="VersionTitleResponseMessage" message="tns:VersionTitleResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionTitleInformationOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetVersionTitleInformation_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailComponentInformation">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailComponentInformation" name="ComponentDetailRequestMessage" message="tns:ComponentDetailRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailComponentInformationResponse" name="ComponentDetailResponseMessage" message="tns:ComponentDetailResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailComponentInformationOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetDetailComponentInformation_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailVersionReelInformation">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionReelInformation" name="VersionReelDetailRequestMessage" message="tns:VersionReelDetailRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionReelInformationResponse" name="VersionReelDetailResponseMessage" message="tns:VersionReelDetailResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailVersionReelInformationOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetDetailVersionReelInformation_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailQCRejectionInformation">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailQCRejectionInformation" name="QCRejectionDetailRequestMessage" message="tns:QCRejectionDetailRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailQCRejectionInformationResponse" name="QCRejectionDetailResponseMessage" message="tns:QCRejectionDetailResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetDetailQCRejectionInformationOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetDetailQCRejectionInformation_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionCountByTitleId">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionCountByTitleId" name="VersionCountByTitleIdRequestMessage" message="tns:VersionCountByTitleIdRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionCountByTitleIdResponse" name="VersionCountByTitleIdResponseMessage" message="tns:VersionCountByTitleIdResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetVersionCountByTitleIdOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetVersionCountByTitleId_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBIMComparisonDataByMaterialId">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBIMComparisonDataByMaterialId" name="BIMComparisonByMaterialIdRequestMessage" message="tns:BIMComparisonByMaterialIdRequestMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBIMComparisonDataByMaterialIdResponse" name="BIMComparisonByMaterialIdResponseMessage" message="tns:BIMComparisonByMaterialIdResponseMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetBIMComparisonDataByMaterialIdOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetBIMComparisonDataByMaterialId_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotStartNetworks">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetHotStartNetworks" message="tns:IInventory_GetHotStartNetworks_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetHotStartNetworksResponse" name="GetHotStartNetworkMessage" message="tns:GetHotStartNetworkMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/GetHotStartNetworksOrionFaultFault" name="OrionFaultFault" message="tns:IInventory_GetHotStartNetworks_OrionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionPing">
+      <wsdl:input wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/VersionPing" message="tns:IInventory_VersionPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.turner.com/ea/Orion/Longform/contract/5/0/IInventory/VersionPingResponse" message="tns:IInventory_VersionPing_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
